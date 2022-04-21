@@ -25,7 +25,7 @@ exports.registration = async (req, res) => {
 };
 
 exports.login = async (req, res) => {
-    const userLoggingIn = req.body;    
+    const userLoggingIn = req.body;
     const user = await User.findOne({ email: userLoggingIn.email });
     if (!user) {
         res.status(400).json({
@@ -33,7 +33,10 @@ exports.login = async (req, res) => {
             message: "Invalid Email Or Password",
         });
     } else {
-        const isPasswordMatch = await bcrypt.compare(userLoggingIn.password, user.password);
+        const isPasswordMatch = await bcrypt.compare(
+            userLoggingIn.password,
+            user.password
+        );
         if (isPasswordMatch) {
             const payload = {
                 id: user._id,
@@ -68,7 +71,7 @@ exports.login = async (req, res) => {
     }
 };
 
-exports.currentUser = async (req, res) => {    
+exports.currentUser = async (req, res) => {
     res.status(200).json({
         success: true,
         user: req.user,

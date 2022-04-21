@@ -14,12 +14,14 @@ export default function Login() {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:5000/auth/login", userData).then((response) => {          
-            if (response.data.success) {
-                setUserData(response.data.user);
-                alert("Succefully logged in");
-            }
-        });
+        axios
+            .post("http://localhost:5000/auth/login", userData)
+            .then((response) => {
+                if (response.data.success) {
+                    setUserData(response.data.user);
+                    alert("Succefully logged in");
+                }
+            });
     };
 
     return (

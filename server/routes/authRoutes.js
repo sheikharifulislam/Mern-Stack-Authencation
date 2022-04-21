@@ -1,5 +1,10 @@
 const authRouter = require("express").Router();
-const { registration, login, currentUser, logOut } = require("../controller/authController");
+const {
+    registration,
+    login,
+    currentUser,
+    logOut,
+} = require("../controller/authController");
 const checkLogin = require("../middlewares/checkLogin");
 
 authRouter.post("/registration", registration);

@@ -13,17 +13,29 @@ export default function Registration() {
 
     const handleregistration = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:5000/auth/registration`, userData).then((response) => {
-            if (response.data.success) {
-                alert("Registration successful");
-            }
-        });
+        axios
+            .post(`http://localhost:5000/auth/registration`, userData)
+            .then((response) => {
+                if (response.data.success) {
+                    alert("Registration successful");
+                }
+            });
     };
 
     return (
         <form onSubmit={handleregistration}>
-            <input type="text" name="name" placeholder="Enter Your Name" onInput={handleInput} />
-            <input type="email" name="email" placeholder="Enter Your Email" onInput={handleInput} />
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter Your Name"
+                onInput={handleInput}
+            />
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter Your Email"
+                onInput={handleInput}
+            />
             <input
                 type="password"
                 name="password"
