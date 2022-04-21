@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    justify-content: center;
+}
+.header a,
+button {
+    font-size: 20px;
+    padding: 10px 30px;
+    text-decoration: none;
+}
+
+input {
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+}
